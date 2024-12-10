@@ -257,7 +257,7 @@
     grid-column: 2 / 3;
   }
 
-  .tip:nth-child(2) .topic__card{
+  .tip:nth-child(2) .tip__card{
     grid-column: 1 / 4;
   }
 
