@@ -12,7 +12,8 @@
   --decor-color: var(--accent-color);
   --background-color: #000028;
   --header-color: #db00ff;
-  --h2-color: var(--accent-color);
-  --h3-color: var(--background-color);
+  --heading-color: var(--accent-color);
+  --subtitle-color: var(--background-color);
   --is-light: visible;
+  --text-color-header: var(--background-color);
 }

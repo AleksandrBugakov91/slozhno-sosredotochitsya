@@ -6,8 +6,8 @@
   --background-image: url("../images/cover-image-dark.png");
   --accent-color: #ff0070;
   --header-color: #db00ff;
-  --h2-color: var(--accent-color);
-  --h3-color: var(--background-color);
+  --heading-color: var(--accent-color);
+  --subtitle-color: var(--background-color);
   --background-color: #000028;
   --text-color: #f1b2ce;
   --opacity-color: #ff007066;

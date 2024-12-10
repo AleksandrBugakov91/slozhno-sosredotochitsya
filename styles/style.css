@@ -1,14 +1,19 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: var(--font-family);
   background-color: var(--background-color);
+  font-family: var(--font-family);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .decorated-zone::before {
   align-self: flex-start;
   justify-self: end;
   position: absolute;
+  left: 340px;
   content: "";
   inline-size: 25px;
   block-size: 25px;
@@ -20,6 +25,7 @@
   justify-self: start;
   align-self: flex-end;
   position: absolute;
+  right: 340px;
   content: "";
   inline-size: 25px;
   block-size: 25px;
@@ -29,10 +35,20 @@
 
 .text__link {
   text-shadow: 2px 2px 0px var(--accent-color);
+  text-decoration: none;
+}
+
+.text__link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.text__link:focus {
+  outline: none;
 }
 
 .text__link:focus-visible {
-  outline: none;
+  outline: 1px solid var(--text-color);
+  outline-offset: -1px;
 }
 
 .header {
@@ -41,29 +57,27 @@
   grid-template-columns: repeat(2, 1fr);
   grid-auto-flow: column;
   align-items: center;
-  height: 100%;
+  height: 100vh;
+  min-height: 668px;
   padding: 10px;
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center;
 }
 
-.header__dark {
+.header__lamp {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-self: end;
   align-self: flex-start;
   position: absolute;
+  top: 10px;
   visibility: var(--is-light);
   font-size: var(--regular-font-size);
   color: var(--accent-color);
-  block-size: 26px;
   gap: 10px;
   text-transform: uppercase;
   line-height: 25px;
 }
 
-.header__dark::after {
+.header__lamp::after {
   align-self: center;
   content: "";
   inline-size: 9px;
@@ -71,19 +85,17 @@
   border-radius: 50%;
   margin-inline-end: 9px;
   background-color: var(--accent-color);
-  filter: drop-shadow(0px 0px 4px var(--accent-color));
+  box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
 .header__theme-menu {
   grid-column: 1 / 3;
   justify-self: end;
-  padding-top: 65px;
-  padding-bottom: 77px;
 }
 
 .header__theme-menu-list {
   display: grid;
-  gap: 10px;
+  gap: 15px;
   text-align: center;
 }
 
@@ -135,15 +147,17 @@
   size: var(--regular-font-size);
   line-height: var(--regular-line-height);
   font-weight: var(--bold-font-weight);
+  color: var(--text-color-header);
 }
 
 .main {
-  margin-block: 40px;
+  padding-block: 40px;
   padding-inline: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-flow: column;
   row-gap: 50px;
+  background-color: var(--background-color);
 }
 
 .tip {
@@ -156,7 +170,7 @@
 .tip__title {
   grid-column: 1 / 4;
   line-height: var(--regular-line-height);
-  color: var(--h2-color);
+  color: var(--heading-color);
   font-weight: var(--bold-font-weight);
   font-size: var(--regular-font-size);
 }
@@ -171,7 +185,7 @@
 
 .title_decor {
   grid-column: 1 / 4;
-  color: var(--h3-color);
+  color: var(--subtitle-color);
   font-weight: var(--bold-font-weight);
   line-height: var(--regular-line-height);
   background-color: var(--accent-color);
@@ -205,8 +219,10 @@
 
 .footer {
   display: grid;
-  block-size: 100vh;
-  padding: 10px;  
+  height: 100vh;
+  min-height: 668px;
+  padding: 10px;
+  background-color: var(--background-color);
 }
 
 .footer__title {
@@ -220,7 +236,19 @@
 
 @media (width >= 768px){
   .header {
-    padding: 20px;
+   padding: 20px;
+  }
+
+  .decorated-zone::before {
+    left: 723px;
+  }
+
+  .decorated-zone::after {
+    right: 723px;
+  }
+
+  .header__lamp {
+    top: 20px;
   }
 
   .header__title {
@@ -229,17 +257,12 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .header__theme-menu {
-    padding-top: 192px;
-    padding-bottom: 173px;
-  }
-
   .header__text {
     grid-column: 2 / 3;
   }
 
   .main {
-    margin-block: 60px;
+    margin-block: 20px;
     row-gap: 80px;
     padding-inline: 20px;
   }
@@ -257,7 +280,7 @@
     grid-column: 2 / 3;
   }
 
-  .tip:nth-child(2) .tip__card{
+  .answers {
     grid-column: 1 / 4;
   }
 
@@ -304,31 +327,27 @@
 }
 
 @media (width >= 1024px) {
-  .text-link:hover {
-    border-bottom: 1px solid var(--text-color);
-  }
-
-  .text-link:focus {
-    outline: none;
-  }
-
-  .text-link:focus-visible {
-    outline: 1px solid var(--text-color);
-    outline-offset: -1px;
-  }
-
+ 
   .header__theme-menu {
     align-self: start;
     justify-self: center;
-    padding-top: 0px;
-    padding-bottom: 273px;
   }
 
   .header__theme-menu-list {
     grid-auto-flow: column;
+    gap: 11px;
+  }
+
+  .decorated-zone::before {
+    left: 979px;
+  }
+
+  .decorated-zone::after {
+    right: 979px;
   }
 
   .header__title {
+    text-shadow: 2px 2px 0 #FF0070;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -340,17 +359,18 @@
     grid-column: 2 / 4;
   }
 
-  .tip:nth-child(2) {
+  .tip__question {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: min-content;
   }
 
-  .tip:nth-child(2) .tip__title {
+  .tip__title-question {
+    grid-column: span 3;
     grid-row: span 1;
+    inline-size: 33%;
   }
 
-  .tip:nth-child(2) .tip__card {
-    grid-row: 2 / 3 ;
+  .answers {
     grid-column: span 1;
   }
 
