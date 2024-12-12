@@ -17,3 +17,19 @@
   --is-light: visible;
   --text-color-header: var(--background-color);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  --background-image: url("../images/cover-image-dark.png");
+  --accent-color: #ff0070;
+  --opacity-color: #ff007066;
+  --text-color: #f1b2ce;
+  --decor-color: var(--accent-color);
+  --background-color: #000028;
+  --header-color: #db00ff;
+  --heading-color: var(--accent-color);
+  --subtitle-color: var(--background-color);
+  --is-light: visible;
+  --text-color-header: var(--background-color);
+  }
+}

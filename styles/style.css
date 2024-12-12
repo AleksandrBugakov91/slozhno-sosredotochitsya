@@ -13,7 +13,8 @@
   align-self: flex-start;
   justify-self: end;
   position: absolute;
-  left: 340px;
+  right: 10px;
+  top: 10px;
   content: "";
   inline-size: 25px;
   block-size: 25px;
@@ -25,7 +26,8 @@
   justify-self: start;
   align-self: flex-end;
   position: absolute;
-  right: 340px;
+  left: 10px;
+  bottom: 10px;
   content: "";
   inline-size: 25px;
   block-size: 25px;
@@ -95,8 +97,9 @@
 
 .header__theme-menu-list {
   display: grid;
-  gap: 15px;
+  gap: 10px;
   text-align: center;
+  min-height: 98px;
 }
 
 .header__theme-menu-button {
@@ -109,6 +112,10 @@
   font-weight: var(--regular-font-weight);
   color: var(--decor-color);
   cursor: pointer;
+}
+
+.header__theme-menu-item {
+  font-size: var(--regular-font-size);
 }
 
 .header__theme-menu-button_active {
@@ -144,7 +151,7 @@
   justify-content: end;
   display: inline-block;
   background-color:  var(--accent-color);
-  size: var(--regular-font-size);
+  font-size: var(--regular-font-size);
   line-height: var(--regular-line-height);
   font-weight: var(--bold-font-weight);
   color: var(--text-color-header);
@@ -157,7 +164,6 @@
   grid-template-columns: repeat(3, 1fr);
   grid-auto-flow: column;
   row-gap: 50px;
-  background-color: var(--background-color);
 }
 
 .tip {
@@ -222,7 +228,6 @@
   height: 100vh;
   min-height: 668px;
   padding: 10px;
-  background-color: var(--background-color);
 }
 
 .footer__title {
@@ -240,11 +245,13 @@
   }
 
   .decorated-zone::before {
-    left: 723px;
+    right: 20px;
+    top: 20px;
   }
 
   .decorated-zone::after {
-    right: 723px;
+    left: 20px;
+    bottom: 20px;
   }
 
   .header__lamp {
@@ -339,11 +346,13 @@
   }
 
   .decorated-zone::before {
-    left: 979px;
+    right: 20px;
+    top: 20px;
   }
 
   .decorated-zone::after {
-    right: 979px;
+    left: 20px;
+    bottom: 20px;
   }
 
   .header__title {
